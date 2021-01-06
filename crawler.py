@@ -16,9 +16,8 @@ if __name__ == '__main__':
     gh = github3.login(token=os.getenv('GH_TOKEN'))
     
     #Get all repos from organization
-    all_repos = gh.repositories_by(os.getenv('ORGANIZATION'))
+    all_repos = gh.repositories(os.getenv('ORGANIZATION'))
 
     #Print each repository
-    #TODO: Need to get private repos too
     for repo in all_repos:
         print(repo)
