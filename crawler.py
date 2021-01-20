@@ -20,8 +20,11 @@ if __name__ == "__main__":
 
     # TODO: Gather metadata for each repo
 
+    # Set the topic
+    topic = os.getenv("TOPIC")
+
     # TODO: Write each repository to a repos.json file
-    f = open("repos.json", "x")
+    f = open("repos.json", "w")
 
     for repo in all_repos:
         if repo is not None:
@@ -33,7 +36,7 @@ if __name__ == "__main__":
             except Exception:
                 print("skipping 404")
             else:
-                if "inner-source" in repo_topic.names:
+                if topic in repo_topic.names:
                     print("{0}".format(repo))
                     f.write(repo.name + "\n")
     f.close()
