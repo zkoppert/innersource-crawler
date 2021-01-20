@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 import os
-from os.path import join, dirname
+from os.path import dirname, join
+
 import github3
 from dotenv import load_dotenv
 
@@ -30,7 +31,7 @@ if __name__ == "__main__":
             try:
                 repo_topic = repo.topics()
             except Exception:
-                print('skipping 404')
+                print("skipping 404")
             else:
                 if "inner-source" in repo_topic.names:
                     print("{0}".format(repo))
