@@ -1,1 +1,2 @@
 python-dotenv==0.15.0
+ratelimiter==1.2.0.post0
