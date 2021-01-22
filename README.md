@@ -5,7 +5,7 @@ This project creates a `repos.json` that can be utilized by the [SAP InnerSource
 
 ## Installation
 
-`pip -r requirements.txt`
+`pip install -r requirements.txt`
 
 ## Usage
 
