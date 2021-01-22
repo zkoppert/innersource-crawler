@@ -1,16 +1,14 @@
-name: Integration Test
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Self test
-        id: selftest
-
-        uses: ryan-rozario/pipreqs-action@v2.0.0
-
-        # Put an example of mandatory inputs here
-        with:
-          PROJECT_PATH: .
-          REQUIREMENT_PATH: ./requirements.txt
+# TEMP Disable workflow
+#name: Integration Test
+#on: [push]
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#      - name: Update requirements.txt
+#        uses: ryan-rozario/pipreqs-action@v2.0.0
+#        with:
+#          PROJECT_PATH: .
+#          REQUIREMENT_PATH: ./requirements.txt
