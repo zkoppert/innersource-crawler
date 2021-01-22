@@ -1,2 +1,3 @@
+github3.py==1.3.0
 python-dotenv==0.15.0
 ratelimiter==1.2.0.post0
