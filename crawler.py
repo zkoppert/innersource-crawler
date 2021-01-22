@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import json
-from ratelimiter import RateLimiter
 import os
 from os.path import dirname, join
 
 import github3
 from dotenv import load_dotenv
+from ratelimiter import RateLimiter
 
 if __name__ == "__main__":
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     repo_list = []
     # Set the topic
     topic = os.getenv("TOPIC")
-    
+
     with rate_limiter:
         for repo in all_repos:
             if repo is not None:
