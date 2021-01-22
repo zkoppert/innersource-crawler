@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+from ratelimiter import RateLimiter
 import os
 from os.path import dirname, join
 
@@ -18,27 +19,25 @@ if __name__ == "__main__":
 
     # Get all repos from organization
     all_repos = gh.repositories()
-
+    rate_limiter = RateLimiter(max_calls=10, period=1)
     repo_list = []
     # Set the topic
     topic = os.getenv("TOPIC")
-
-    for repo in all_repos:
-        if repo is not None:
-            # Get the repo topics as type dict and print them nicely
-
-            # TODO: #6 handle rate limiting
-            try:
-                repo_topic = repo.topics()
-            except Exception:
-                print("skipping 404")
-            else:
-                if topic in repo_topic.names:
-                    # TODO: #7 For each resulting project add a key _InnerSourceMetadata
-                    print("{0}".format(repo))
-                    full_repository = repo.refresh()
-                    # Add stuff here about innersource.json data before appending to list
-                    repo_list.append(full_repository.as_dict())
+    
+    with rate_limiter:
+        for repo in all_repos:
+            if repo is not None:
+                try:
+                    repo_topic = repo.topics()
+                except Exception:
+                    print("skipping 404")
+                else:
+                    if topic in repo_topic.names:
+                        print("{0}".format(repo))
+                        full_repository = repo.refresh()
+                        # TODO: #7 For each resulting project add a key _InnerSourceMetadata
+                        # Add stuff here about innersource.json data before appending to list
+                        repo_list.append(full_repository.as_dict())
 
     # Write each repository to a repos.json file
     with open("repos.json", "w") as f:
