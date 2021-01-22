@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Set the topic
     topic = os.getenv("TOPIC")
     organization = os.getenv("ORGANIZATION")
-    
+
     # Get all repos from organization
     search_string = "org:" + organization + " topic:" + topic
     all_repos = gh.search_repositories(search_string)
