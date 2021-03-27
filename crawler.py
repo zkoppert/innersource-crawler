@@ -2,8 +2,8 @@
 
 import json
 import os
-from os.path import dirname, join
 from base64 import b64decode
+from os.path import dirname, join
 
 import github3
 from dotenv import load_dotenv
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     organization = os.getenv("ORGANIZATION")
 
     # Get all repos from organization
-    search_string = "org:" + organization + " topic:" + topic
+    search_string = "org:{} topic:{}".format(organization, topic)
     all_repos = gh.search_repositories(search_string)
     repo_list = []
 
