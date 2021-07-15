@@ -17,3 +17,6 @@ This project creates a `repos.json` that can be utilized by the [SAP InnerSource
 1. Copy `repos.json` to your instance of the [SAP-InnerSource-Portal][SAP-InnerSource-Portal] and launch the portal as outlined in their installation instructions
 
 [SAP-InnerSource-Portal]: https://github.com/sap/project-portal-for-InnerSource
+
+## License
+[MIT](LICENSE)
