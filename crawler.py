@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # Auth to GitHub.com
     ghe = os.getenv("GH_ENTERPRISE_URL").strip()
     if ghe:
-        gh = github3.github.GitHubEnterprise(os.getenv("GH_ENTERPRISE_URL"), token=os.getenv("GH_TOKEN"))
+        gh = github3.github.GitHubEnterprise(ghe, token=os.getenv("GH_TOKEN"))
     else:
         gh = github3.login(token=os.getenv("GH_TOKEN"))
 
