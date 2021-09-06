@@ -15,7 +15,11 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path)
 
     # Auth to GitHub.com
-    gh = github3.login(token=os.getenv("GH_TOKEN"))
+    ghe = os.getenv("GH_ENTERPRISE_URL").strip()
+    if ghe:
+        gh = github3.github.GitHubEnterprise(os.getenv("GH_ENTERPRISE_URL"), token=os.getenv("GH_TOKEN"))
+    else:
+        gh = github3.login(token=os.getenv("GH_TOKEN"))
 
     # Set the topic
     topic = os.getenv("TOPIC")
