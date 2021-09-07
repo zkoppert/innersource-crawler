@@ -15,7 +15,7 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path)
 
     # Auth to GitHub.com
-    ghe = os.getenv("GH_ENTERPRISE_URL").strip()
+    ghe = os.getenv("GH_ENTERPRISE_URL", default="").strip()
     if ghe:
         gh = github3.github.GitHubEnterprise(ghe, token=os.getenv("GH_TOKEN"))
     else:
