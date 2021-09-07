@@ -1,5 +1,5 @@
 # InnerSource Crawler
-![.github/workflows/linter.yml](https://github.com/zkoppert/innersource-crawler/actions/workflows/linter.yml/badge.svg) ![Integration Test](https://github.com/zkoppert/innersource-crawler/actions/workflows/integration_tests.yml/badge.svg) ![CodeQL](https://github.com/zkoppert/innersource-crawler/actions/workflows/codeql-analysis.yml/badge.svg)
+![.github/workflows/linter.yml](https://github.com/zkoppert/innersource-crawler/actions/workflows/linter.yml/badge.svg) ![CodeQL](https://github.com/zkoppert/innersource-crawler/actions/workflows/codeql-analysis.yml/badge.svg)
 
 This project creates a `repos.json` that can be utilized by the [SAP InnerSource Portal][SAP-InnerSource-Portal]. The current approach assumes that the repos that you want to show in the portal are available in a GitHub organization, and that they all are tagged with a certain _topic_.
 
