@@ -40,7 +40,7 @@ jobs:
         TOPIC: inner-source
 ```
 
-## Local usage
+## Local usage without Docker
 
 1. Copy `.env-example` to `.env`
 1. Fill out the `.env` file with a _token_ from a user that has access to the organization to scan (listed below). Tokens should have admin:org or read:org access.
