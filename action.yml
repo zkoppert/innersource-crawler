@@ -1,0 +1,10 @@
+---
+name: 'InnerSource-Crawler'
+author: 'zkoppert'
+description: 'A GitHub Action to create a list of InnerSource repos within an organization.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-square'
+  color: 'white'
