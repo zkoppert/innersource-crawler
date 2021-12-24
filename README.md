@@ -1,9 +1,11 @@
 # InnerSource Crawler
+
 ![.github/workflows/linter.yml](https://github.com/zkoppert/innersource-crawler/actions/workflows/linter.yml/badge.svg) ![CodeQL](https://github.com/zkoppert/innersource-crawler/actions/workflows/codeql-analysis.yml/badge.svg)
 
 This project creates a `repos.json` that can be utilized by the [SAP InnerSource Portal][SAP-InnerSource-Portal]. The current approach assumes that the repos that you want to show in the portal are available in a GitHub organization, and that they all are tagged with a certain _topic_.
 
 ## Support
+
 If you need support using this project or have questions about it, please [open up an issue in this repository](https://github.com/zkoppert/innersource-crawler/issues). Requests made directly to GitHub staff or support team will be redirected here to open an issue. GitHub SLA's and support/services contracts do not apply to this repository.
 
 ## Use as a GitHub Action
@@ -15,6 +17,7 @@ Note: Your GitHub token will need to have read/write access to all the repositor
 1. Don't forget to do something with the resulting `repos.json` file. You can [move it to another repository](https://github.com/marketplace/actions/push-a-file-to-another-repository) if needed or [save it as a build artifact](https://github.com/actions/upload-artifact). This will all depend on what you are doing with it and what repository you are running this action out of.
 
 ### Example workflow
+
 ```yaml
 name: InnerSource repo crawler
 
@@ -54,4 +57,5 @@ jobs:
 [SAP-InnerSource-Portal]: https://github.com/sap/project-portal-for-InnerSource
 
 ## License
+
 [MIT](LICENSE)
