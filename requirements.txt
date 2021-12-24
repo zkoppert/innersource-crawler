@@ -1,2 +1,3 @@
 github3.py==3.0.0
 python-dotenv==0.19.2
+repo-activity-score==0.0.4
