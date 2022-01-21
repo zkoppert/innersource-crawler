@@ -6,6 +6,7 @@ from base64 import b64decode
 from os.path import dirname, join
 
 import github3
+import repo_activity.score
 from dotenv import load_dotenv
 
 if __name__ == "__main__":
@@ -68,6 +69,9 @@ if __name__ == "__main__":
             # fetch repository topics
             topics = repo.repository.topics()
             innersource_repo["_InnerSourceMetadata"]["topics"] = topics.names
+
+            # calculate score
+            innersource_repo["score"] = repo_activity.score.calculate(innersource_repo)
 
             repo_list.append(innersource_repo)
 
