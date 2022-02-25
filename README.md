@@ -1,4 +1,4 @@
-# InnerSource Crawler
+# Super InnerSource Crawler
 
 ![.github/workflows/linter.yml](https://github.com/zkoppert/innersource-crawler/actions/workflows/linter.yml/badge.svg) ![CodeQL](https://github.com/zkoppert/innersource-crawler/actions/workflows/codeql-analysis.yml/badge.svg)
 
