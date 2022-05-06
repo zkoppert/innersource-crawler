@@ -71,7 +71,7 @@ if __name__ == "__main__":
             innersource_repo["_InnerSourceMetadata"]["topics"] = topics.names
 
             # calculate score
-            innersource_repo["score"] = repo_activity.score.calculate(innersource_repo)
+            innersource_repo["_InnerSourceMetadata"]["score"] = repo_activity.score.calculate(innersource_repo)
 
             repo_list.append(innersource_repo)
 
