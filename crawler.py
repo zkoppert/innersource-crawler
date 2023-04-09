@@ -24,6 +24,8 @@ if __name__ == "__main__":
 
     # Set the topic
     topic = os.getenv("TOPIC")
+    # If multiple topics, split topics by comma
+    topics = [t.strip() for t in topic.split(',')]
     organization = os.getenv("ORGANIZATION")
 
     # Get all repos from organization
