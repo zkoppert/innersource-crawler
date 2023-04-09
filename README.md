@@ -40,6 +40,8 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         ORGANIZATION: ${{ secrets.ORGANIZATION }}
+        # for multiple topics, add them after a comma eg:
+        # TOPIC: inner-source,actions,security,python
         TOPIC: inner-source
 ```
 
