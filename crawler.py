@@ -33,10 +33,12 @@ if __name__ == "__main__":
     # Set for repos that have already been added to the list
     repo_set = set()
     
+    # Iterate over topics, search for matching repositories, and process unique ones
     for topic in topics:
         search_string = "org:{} topic:{}".format(organization, topic)
         all_repos = gh.search_repositories(search_string)
         
+        # For each repo in the search results, check if it's unique and add it to repo_set
         for repo in all_repos:
             if repo is not None and repo.repository.full_name not in repo_set:
                 repo_set.add(repo.repository.full_name)
