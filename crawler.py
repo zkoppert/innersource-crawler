@@ -23,6 +23,9 @@ if __name__ == "__main__":
 
     # Set the topic
     topic = os.getenv("TOPIC")
+    if not topic:
+        raise ValueError("TOPIC environment variable not set")
+
     # If multiple topics, split topics by comma
     topics = [t.strip() for t in topic.split(",")]
     organization = os.getenv("ORGANIZATION")
