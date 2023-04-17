@@ -10,7 +10,6 @@ import repo_activity.score
 from dotenv import load_dotenv
 
 if __name__ == "__main__":
-
     # Load env variables from file
     dotenv_path = join(dirname(__file__), ".env")
     load_dotenv(dotenv_path)
@@ -25,19 +24,19 @@ if __name__ == "__main__":
     # Set the topic
     topic = os.getenv("TOPIC")
     # If multiple topics, split topics by comma
-    topics = [t.strip() for t in topic.split(',')]
+    topics = [t.strip() for t in topic.split(",")]
     organization = os.getenv("ORGANIZATION")
 
     # Create empty list for repos
     repo_list = []
     # Set for repos that have already been added to the list
     repo_set = set()
-    
+
     # Iterate over topics, search for matching repositories, and process unique ones
     for topic in topics:
         search_string = "org:{} topic:{}".format(organization, topic)
         all_repos = gh.search_repositories(search_string)
-        
+
         # For each repo in the search results, check if it's unique and add it to repo_set
         for repo in all_repos:
             if repo is not None and repo.repository.full_name not in repo_set:
@@ -59,9 +58,9 @@ if __name__ == "__main__":
 
                 # fetch repository participation
                 participation = repo.repository.weekly_commit_count()
-                innersource_repo["_InnerSourceMetadata"]["participation"] = participation[
-                    "all"
-                ]
+                innersource_repo["_InnerSourceMetadata"][
+                    "participation"
+                ] = participation["all"]
 
                 # fetch contributing guidelines
                 try:
@@ -79,7 +78,9 @@ if __name__ == "__main__":
                 innersource_repo["_InnerSourceMetadata"]["topics"] = repo_topics.names
 
                 # calculate score
-                innersource_repo["score"] = repo_activity.score.calculate(innersource_repo)
+                innersource_repo["score"] = repo_activity.score.calculate(
+                    innersource_repo
+                )
 
                 repo_list.append(innersource_repo)
 
