@@ -10,7 +10,7 @@ If you need support using this project or have questions about it, please [open 
 
 ## Use as a GitHub Action
 
-1. Create a repository to host this GitHub Action or select an existing repository.
+1. Create a repository to host this GitHub Action or select an existing repository
 1. Create the env values from the sample workflow below (GH_TOKEN, ORGANIZATION) with your information as repository secrets. More info on creating secrets can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 Note: Your GitHub token will need to have read/write access to all the repositories in the organization
 1. Copy the below example workflow to your repository and put it in the `.github/workflows/` directory with the file extension `.yml` (ie. `.github/workflows/crawler.yml`)
