@@ -80,6 +80,10 @@ if __name__ == "__main__":
                 repo_topics = repo.repository.topics()
                 innersource_repo["_InnerSourceMetadata"]["topics"] = repo_topics.names
 
+                # set description = '' if no exist
+                if innersource_repo['description'] is None:
+                    innersource_repo['description'] = ''
+
                 # calculate score
                 innersource_repo["score"] = repo_activity.score.calculate(
                     innersource_repo
