@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 repo_set.add(repo.repository.full_name)
                 print("{0}".format(repo.repository))
 
-                innersource_repo: dict = repo.as_dict()
+                innersource_repo = repo.as_dict()
                 innersource_repo["_InnerSourceMetadata"] = {}
 
                 # fetch innersource.json
@@ -79,9 +79,10 @@ if __name__ == "__main__":
                 # fetch repository topics
                 repo_topics = repo.repository.topics()
                 innersource_repo["_InnerSourceMetadata"]["topics"] = repo_topics.names
-                
+
                 # set description = '' if no exist
-                innersource_repo.set_default('description', '')
+                if innersource_repo['description'] is None:
+                    innersource_repo['description'] = ''
 
                 # calculate score
                 innersource_repo["score"] = repo_activity.score.calculate(
