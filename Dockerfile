@@ -1,4 +1,4 @@
-FROM python:3.13.7-slim@sha256:5f55cdf0c5d9dc1a415637a5ccc4a9e18663ad203673173b8cda8f8dcacef689
+FROM python:3.14.2-slim@sha256:2751cbe93751f0147bc1584be957c6dd4c5f977c3d4e0396b56456a9fd4ed137
 
 WORKDIR /action/workspace
 COPY requirements.txt crawler.py /action/workspace/
